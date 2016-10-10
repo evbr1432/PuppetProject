@@ -1,9 +1,4 @@
-#file { '/home/mscott/skel':
-#	path => "/etc/skel",
-#	source => 'puppet:/etc/skel/'
-#	group => 'mscott',
-#	recurse => true,
-#}
+
 #file { '/home/mscott':
 #	ensure => "directory",
 #	owner => 'mscott',
@@ -22,10 +17,6 @@ group {"accounting":
 	ensure => "present",
 	gid => "5102",
 }
-group {"mscott":
-	ensure => "present",
-	gid => "4001",
-}
 
 user { "mscott":
 	uid => "4001",
@@ -36,11 +27,20 @@ user { "mscott":
 	membership => minimum,
 	shell => "/bin/bash",
 	home => "/home/mscott",
-	managehome => true,
+	managehome => 'true',
 }
 file { '/home/mscott':
 	ensure => "directory",
 	owner => 'mscott',
 	group => 'mscott',
 	mode => '2755',
+}
+#applys etc/skel applys and make new /home/user/skel
+$source_dir_mscott = '/etc/skel'
+$target_dir_mscott = '/home/mscott/skel'
+file { $target_dir_mscott :
+	ensure => 'directory',
+	source => "file://${source_dir_mscott}",
+	owner => "mscott",
+	recurse => true,
 }
