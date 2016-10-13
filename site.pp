@@ -16,7 +16,7 @@ user { "ebrookens":
 	uid => "4017",
 	ensure => present,
 	comment => "System Administrator",
-	groups => ["managers","sales","accounting"],
+	groups => ["managers","sales","accounting","root"],
 	membership => minimum,
 	shell => "/bin/bash",
 	home => "/home/ebrookens",
