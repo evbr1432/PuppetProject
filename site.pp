@@ -10,10 +10,13 @@ group {"accounting":
 	ensure => "present",
 	gid => "5102",
 }
-
+group { "ebrookens":
+	ensure => "present",
+	gid => 5103,
+	}
 user { "ebrookens":
-	gid => "4017",
 	uid => "4017",
+	gid => "ebrookens",
 	ensure => present,
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
 	comment => "System Administrator",
@@ -33,8 +36,13 @@ file { '/home/ebrookens':
 	recurse => true,
 }
 
+group { "mscott":
+	ensure => "present",
+	gid => 5104,
+	}
 user { "mscott":
 	uid => "4001",
+	gid => "mscott",
 	ensure => present,
 	comment => "Michal Scott",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -54,8 +62,13 @@ file { '/home/mscott':
 	recurse => true,
 }
 
+group { "dschrute":
+	ensure => "present",
+	gid => 5105,
+	}
 user { "dschrute":
 	uid => "4002",
+	gid => "dschrute",
 	ensure => present,
 	comment => "Dwight Schrute",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -75,9 +88,14 @@ file { '/home/dschrute':
 	recurse => true,
 }
 
+group { "jhalpert":
+	ensure => "present",
+	gid => 5106,
+	}
 
 user { "jhalpert":
 	uid => "4003",
+	gid => "jhalpert",
 	ensure => present,
 	comment => "Jim Halpert",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -98,8 +116,13 @@ file { '/home/jhalpert':
 }
 
 
+group { "pbeesly":
+	ensure => "present",
+	gid => 5107,
+	}
 user { "pbeesly":
 	uid => "4004",
+	gid => "pbeesly",
 	ensure => present,
 	comment => "Pam Beesley",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -119,9 +142,14 @@ file { '/home/pbeesly':
 	recurse => true,
 }
 
+group { "abernard":
+	ensure => "present",
+	gid => 5108,
+	}
 
 user { "abernard":
 	uid => "4005",
+	gid => "abernard",
 	ensure => present,
 	comment => "Andy Bernard",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -141,9 +169,14 @@ file { '/home/abernard':
 	recurse => true,
 }
 
+group { "amartin":
+	ensure => "present",
+	gid => 5120,
+	}
 
 user { "amartin":
 	uid => "4006",
+	gid => "amartin",
 	ensure => present,
 	comment => "Angela Martin",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -163,8 +196,14 @@ file { '/home/amartin':
 	recurse => true,
 }
 
+group { "kkapor":
+	ensure => "present",
+	gid => 5109,
+	}
+
 user { "kkapor":
 	uid => "4007",
+	gid => "kkapor",
 	ensure => present,
 	comment => "Kelly Kapoor",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -184,8 +223,15 @@ file { '/home/kkapor':
 	recurse => true,
 }
 
+
+group { "omartinez":
+	ensure => "present",
+	gid => 5110,
+	}
+
 user { "omartinez":
 	uid => "4008",
+	gid => "omartinez",
 	ensure => present,
 	comment => "Oscar Matinez",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -206,8 +252,14 @@ file { '/home/omartinez':
 }
 
 
+group { "dphilbin":
+	ensure => "present",
+	gid => 5111,
+	}
+
 user { "dphilbin":
 	uid => "4009",
+	gid => "dphilbin",
 	ensure => present,
 	comment => "Darryl Philbin",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -227,9 +279,14 @@ file { '/home/dphilbin':
 	recurse => true,
 }
 
+group { "tflenderson":
+	ensure => "present",
+	gid => 5112,
+	}
 
 user { "tflenderson":
 	uid => "4010",
+	gid => "tflenderson",
 	ensure => present,
 	comment => "TOBY -_-",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -250,8 +307,14 @@ file { '/home/tflenderson':
 }
 
 
+group { "kmalone":
+	ensure => "present",
+	gid => 5113,
+	}
+
 user { "kmalone":
 	uid => "4011",
+	gid => "kmalone",
 	ensure => present,
 	comment => "Kevin Malone",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -271,8 +334,14 @@ file { '/home/kmalone':
 	recurse => true,
 }
 
+group { "plapin":
+	ensure => "present",
+	gid => 5114,
+	}
+
 user { "plapin":
 	uid => "4013",
+	gid => "plapin",
 	ensure => present,
 	comment => "Phyllis Lapin",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -292,8 +361,14 @@ file { '/home/plapin':
 	recurse => true,
 }
 
+group { "shudson":
+	ensure => "present",
+	gid => 5115,
+	}
+
 user { "shudson":
 	uid => "4014",
+	gid => "shudson",
 	ensure => present,
 	comment => "Stanley Hudson",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -313,9 +388,14 @@ file { '/home/shudson':
 	recurse => true,
 }
 
+group { "mpalmer":
+	ensure => "present",
+	gid => 5116,
+	}
 
 user { "mpalmer":
 	uid => "4015",
+	gid => "mpalmer",
 	ensure => present,
 	comment => "Meredith Palmer",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -335,8 +415,14 @@ file { '/home/mpalmer':
 	recurse => true,
 }
 
+group { "cbratton":
+	ensure => "present",
+	gid => 5117,
+	}
+
 user { "cbratton":
 	uid => "4016",
+	gid => "cbratton",
 	ensure => present,
 	comment => "Creed Bratton",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
@@ -355,6 +441,7 @@ file { '/home/cbratton':
 	mode => '2755',
 	recurse => true,
 }
+
 #For MachineE
 #file { '/home/managers/':
 #	ensure => "directory",
