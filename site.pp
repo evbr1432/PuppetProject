@@ -12,11 +12,12 @@ group {"accounting":
 }
 
 user { "ebrookens":
+	gid => "4017",
 	uid => "4017",
 	ensure => present,
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
 	comment => "System Administrator",
-	groups => ["ebrookens","managers","sales","accounting","root"],
+	groups => ["ebrookens","root"],
 	membership => minimum,
 	shell => "/bin/bash",
 	home => "/home/ebrookens",
@@ -32,13 +33,12 @@ file { '/home/ebrookens':
 	recurse => true,
 }
 
-
 user { "mscott":
 	uid => "4001",
 	ensure => present,
 	comment => "Michal Scott",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
-	groups => ["mscott","managers","sales","accounting"],
+	groups => ["mscott","managers"],
 	membership => minimum,
 	shell => "/bin/bash",
 	home => "/home/mscott",
@@ -59,7 +59,7 @@ user { "dschrute":
 	ensure => present,
 	comment => "Dwight Schrute",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
-	groups => ["dshrute","managers","sales"],
+	groups => ["dschrute","managers"],
 	membership => minimum,
 	shell => "/bin/bash",
 	home => "/home/dschrute",
@@ -81,7 +81,7 @@ user { "jhalpert":
 	ensure => present,
 	comment => "Jim Halpert",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
-	groups => ["jhalpert",managers","sales"],
+	groups => ["jhalpert","managers"],
 	membership => minimum,
 	shell => "/bin/bash",
 	home => "/home/jhalpert",
@@ -189,7 +189,7 @@ user { "omartinez":
 	ensure => present,
 	comment => "Oscar Matinez",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
-	groups => ["omartinez",accounting"],
+	groups => ["omartinez","accounting"],
 	membership => minimum,
 	shell => "/bin/bash",
 	home => "/home/omartinez",
@@ -255,7 +255,7 @@ user { "kmalone":
 	ensure => present,
 	comment => "Kevin Malone",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
-	groups => ["kmalone",accounting"],
+	groups => ["kmalone","accounting"],
 	membership => minimum,
 	shell => "/bin/bash",
 	home => "/home/kmalone",
@@ -276,7 +276,7 @@ user { "plapin":
 	ensure => present,
 	comment => "Phyllis Lapin",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
-	groups => ["plapin",sales"],
+	groups => ["plapin","sales"],
 	membership => minimum,
 	shell => "/bin/bash",
 	home => "/home/plapin",
@@ -292,14 +292,12 @@ file { '/home/plapin':
 	recurse => true,
 }
 
-
-
 user { "shudson":
 	uid => "4014",
 	ensure => present,
 	comment => "Stanley Hudson",
 	password => '$1$eMqmMBOS$3jEiPQ/J.Ol07JTI3VRDy',
-	groups => ["shudson",sales"],
+	groups => ["shudson","sales"],
 	membership => minimum,
 	shell => "/bin/bash",
 	home => "/home/shudson",
@@ -357,12 +355,27 @@ file { '/home/cbratton':
 	mode => '2755',
 	recurse => true,
 }
+#For MachineE
+#file { '/home/managers/':
+#	ensure => "directory",
+#	owner => 'managers',
+#	group => ['managers'],
+#	mode => '2750'
+#	recurse => true,
+#}
 
+#file { '/home/accounting/':
+#	ensure => "directory",
+#	owner => 'accounting',
+#	group => ['accounting'],
+#	mode => '2750'
+#	recurse => true,
+#}
 
-
-
-
-
-
-
-
+#file { '/home/sales/':
+#	ensure => "directory",
+#	owner => 'sales',
+#	group => ['sales'],
+#	mode => '2750'
+#	recurse => true,
+#}
